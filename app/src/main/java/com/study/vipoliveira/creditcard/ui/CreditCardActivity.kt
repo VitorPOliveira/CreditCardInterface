@@ -1,7 +1,8 @@
-package com.study.vipoliveira.creditcard
+package com.study.vipoliveira.creditcard.ui
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.study.vipoliveira.creditcard.R
 
 class CreditCardActivity : AppCompatActivity() {
 
