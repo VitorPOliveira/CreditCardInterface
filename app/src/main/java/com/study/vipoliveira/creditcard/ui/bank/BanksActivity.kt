@@ -64,9 +64,14 @@ class BanksActivity : AppCompatActivity() {
         loading_progress_bar.visibility = if (bankResponse?.status == Status.LOADING) View.VISIBLE else View.GONE
 
         if(bankResponse?.status == Status.SUCCESS){
-            bankList.clear()
-            bankList.addAll(bankResponse.data!!)
-            adapter.notifyDataSetChanged()
+            if(bankResponse.data!!.isEmpty()){
+                error_msg_txt.visibility = View.VISIBLE
+                error_msg_txt.text = getString(R.string.no_bank)
+            } else {
+                bankList.clear()
+                bankList.addAll(bankResponse.data!!)
+                adapter.notifyDataSetChanged()
+            }
         }
         retry_button.setOnClickListener { viewModel!!.getBankInfo(paymentMethod?.id!!)}
     }

@@ -7,5 +7,6 @@
     <string name="select_installments">Select Installments</string>
     <string name="price">Amount Price</string>
     <string name="price_alert">Please, add amount Price.</string>
+    <string name="no_bank">Sorry, no bank to select =(</string>
 
 </resources>

@@ -1,6 +1,7 @@
 package com.study.vipoliveira.creditcard.ui.viewentity
 
 import com.study.vipoliveira.creditcard.model.PaymentMethod
+import java.util.stream.Collectors
 
 class PaymentResponse private constructor(val status: Status,
                                           val data: MutableList<PaymentMethod>?,
@@ -11,6 +12,7 @@ class PaymentResponse private constructor(val status: Status,
         }
 
         fun success(data: MutableList<PaymentMethod>): PaymentResponse {
+            data.removeAll{it.paymentType != "credit_card"}
             return PaymentResponse(Status.SUCCESS, data, null)
         }
 
