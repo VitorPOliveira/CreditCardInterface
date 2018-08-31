@@ -11,9 +11,9 @@ interface PaymentService {
     @GET("v1/payment_methods/")
     fun getPaymentMethods(): Single<MutableList<PaymentMethod>>
 
-    @GET("v1/payment_methods/")
+    @GET("v1/payment_methods/card_issuers/")
     fun getIssuerInformation(@Query("payment_method_id") paymentMethod: String): Single<MutableList<BankInfo>>
 
-    @GET("v1/payment_methods/")
-    fun getInstallments(@Query("amount") amount: String, @Query("payment_method_id") paymentMethod: String, @Query("issuer.id") issuerId: String): Single<Installments>
+    @GET("v1/payment_methods/installments/")
+    fun getInstallments(@Query("amount") amount: String, @Query("payment_method_id") paymentMethod: String, @Query("issuer.id") issuerId: String): Single<MutableList<Installments>>
 }

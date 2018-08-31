@@ -2,6 +2,7 @@ package com.study.vipoliveira.creditcard.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.study.vipoliveira.creditcard.service.PaymentService
 import com.study.vipoliveira.creditcard.utils.BASE_URL
 import com.study.vipoliveira.creditcard.utils.ML_KEY_NAME
 import com.study.vipoliveira.creditcard.utils.ML_PUBLIC_KEY
@@ -49,4 +50,10 @@ class NetworkModule {
                 .client(httpClient)
                 .build()
     }
+
+    @Provides
+    fun providePaymentService(retrofit: Retrofit) : PaymentService {
+        return retrofit.create<PaymentService>(PaymentService::class.java)
+    }
+
 }

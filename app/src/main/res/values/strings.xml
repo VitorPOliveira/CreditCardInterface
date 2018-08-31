@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">CreditCard</string>
+    <string name="try_again_button">Try Again</string>
+    <string name="resert_button">RESET</string>
+    <string name="select_card">Select your Credit Card</string>
+    <string name="select_bank">Select your Bank</string>
+    <string name="select_installments">Select Installments</string>
+    <string name="price">Amount Price</string>
+    <string name="price_alert">Please, add amount Price.</string>
+
 </resources>
